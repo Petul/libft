@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 13:10:12 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/18 09:09:46 by pleander         ###   ########.fr       */
+/*   Created: 2024/04/18 13:19:39 by pleander          #+#    #+#             */
+/*   Updated: 2024/04/18 14:41:21 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_isspace(int c)
 {
-	const unsigned char	*t1;
-	const unsigned char	*t2;
-	size_t				i;
-
-	t1 = s1;
-	t2 = s2;
-	i = 0;
-	while (i < n)
-	{
-		if (t1[i] != t2[i])
-			return (t1[i] - t2[i]);
-		i++;
-	}
+	if (c == '\t' || c == '\n'
+		|| c == '\v' || c == '\f'
+		|| c == '\r' || c == ' ')
+		return (1);
 	return (0);
+}
+
+int	ft_atoi(const char *str)
+{
+	int	res;
+	int	sign;
+
+	sign = 1;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-')
+	{
+		sign = -1;
+		str++;
+	}
+	res = 0;
+	while (*str && ft_isdigit(*str))
+	{
+		res = (res * 10) + sign * (*str - '0');
+		str++;
+	}
+	return (res);
 }

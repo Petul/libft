@@ -6,13 +6,13 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:32:20 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/17 13:43:20 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:11:06 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int  c)
+int	ft_toupper(int c)
 {
-	if (c >= 'a' && c <= 'z')	
+	if (c >= 'a' && c <= 'z')
 		return (c - 32);
 	return (c);
 }

@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 13:10:12 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/18 09:09:46 by pleander         ###   ########.fr       */
+/*   Created: 2024/04/18 12:39:51 by pleander          #+#    #+#             */
+/*   Updated: 2024/04/18 13:12:48 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
+#include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	const unsigned char	*t1;
-	const unsigned char	*t2;
-	size_t				i;
+	size_t	src_len;
+	size_t	dst_len;
+	size_t	n;
 
-	t1 = s1;
-	t2 = s2;
-	i = 0;
-	while (i < n)
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
+	n = 1;
+	while (src[n - 1] && (dst_len + n) < dstsize)
 	{
-		if (t1[i] != t2[i])
-			return (t1[i] - t2[i]);
-		i++;
+		dst[dst_len + n - 1] = src[n - 1];
+		n++;
 	}
-	return (0);
+	dst[dst_len + n - 1] = '\0';
+	return (dst_len + src_len);
 }
