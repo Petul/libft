@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 09:05:12 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/18 15:13:37 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:05:04 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int		ft_atoi(const char *str);
 char	*ft_strdup(const char *s1);
 void	*ft_calloc(size_t count, size_t size);
+char 	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
