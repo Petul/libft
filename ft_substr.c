@@ -9,6 +9,7 @@
 /*   Updated: 2024/04/18 16:29:14 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 #include "libft.h"
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
@@ -17,7 +18,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*str;	
 
-	size = len - (ft_strlen(s) - (s + len));
+	size = ft_strlen(s) - (size_t)(ft_strlen(s) - (start + len));
 	str = malloc(sizeof(char) * (size + 1));
 	if (!str)
 		return (NULL);	
