@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 16:04:13 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/19 09:23:50 by pleander         ###   ########.fr       */
+/*   Created: 2024/04/19 10:45:50 by pleander          #+#    #+#             */
+/*   Updated: 2024/04/19 10:59:10 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	**ft_split(char const *s, char c)
 {
-	int		size;
-	int		i;
-	char	*str;
+	int	start;
+	int	end;
+	int len;
 
-	size = (start + (int)len) - ft_strlen(s);
-	if (size > 0)
-		size = len - size;
-	else
-		size = len;
-	str = malloc(sizeof(char) * (size + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (i < size)
+	len = ft_strlen(s);
+	start = 0;
+	end = 0;
+	while (end < len)
 	{
-		str[i] = s[start + i];
-		i++;
+			
 	}
-	str[i] = '\0';
-	return (str);
 }

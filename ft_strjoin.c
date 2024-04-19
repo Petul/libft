@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 16:04:13 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/19 09:23:50 by pleander         ###   ########.fr       */
+/*   Created: 2024/04/19 09:29:42 by pleander          #+#    #+#             */
+/*   Updated: 2024/04/19 09:47:36 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		size;
-	int		i;
-	char	*str;
+	char	*res;
+	size_t	size;
 
-	size = (start + (int)len) - ft_strlen(s);
-	if (size > 0)
-		size = len - size;
-	else
-		size = len;
-	str = malloc(sizeof(char) * (size + 1));
-	if (!str)
+	size = ft_strlen(s1) + ft_strlen(s2) + 1;
+	res = malloc(sizeof(char) * size);
+	if (!res)
 		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		str[i] = s[start + i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	ft_strlcpy(res, s1, size);
+	ft_strlcat(res, s2, size);
+	return (res);
 }
