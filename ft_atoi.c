@@ -6,11 +6,11 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:19:39 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/18 14:41:21 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/22 12:57:03 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-
+// Handle overflow
 int	ft_isspace(int c)
 {
 	if (c == '\t' || c == '\n'

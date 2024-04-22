@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:05:52 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/22 15:13:05 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:33:28 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,19 +22,19 @@ static void	convert(int n, char *str, int sign)
 	if (sign > 0)
 		if (n > (9 / sign))
 			convert(n / 10, str, sign);
-	c = (n  % 10) * sign + '0';
-	str[ft_strlen(str)] = c;	
+	c = (n % 10) * sign + '0';
+	str[ft_strlen(str)] = c;
 }
 
 static size_t	count(int n, int sign)
 {
-	size_t c;
+	size_t	c;
 
 	c = 1;
-	while ((n / 10) * sign > 9 )
+	while ((n / 10) * sign > 9)
 	{
 		c++;
-		n = n /10;
+		n = n / 10;
 	}
 	c++;
 	if (sign < 0)
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 	char	*str;
 	size_t	size;
 	int		sign;
-	
+
 	sign = 1;
 	if (n < 0)
 		sign = -1;

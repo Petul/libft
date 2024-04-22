@@ -6,11 +6,10 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:45:50 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/22 13:01:32 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:31:30 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
 static int	count_splits(char const *s, char c)
 {
@@ -64,8 +63,11 @@ char	**ft_split(char const *s, char c)
 	char	**splits;
 	char	*trimmed;
 	int		n_splits;
+	char	set[2];
 
-	trimmed = ft_strtrim(s, &c);
+	set[0] = c;
+	set[1] = 0;
+	trimmed = ft_strtrim(s, set);
 	n_splits = count_splits(trimmed, c);
 	splits = ft_calloc(n_splits + 1, sizeof(char *));
 	if (!splits)
