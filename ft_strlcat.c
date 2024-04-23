@@ -6,10 +6,9 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:39:51 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/18 13:12:48 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/23 11:26:18 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
@@ -19,13 +18,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	n;
 
 	src_len = ft_strlen(src);
-	dst_len = ft_strlen(dst);
-	n = 1;
-	while (src[n - 1] && (dst_len + n) < dstsize)
+	dst_len = 0;
+	while (dst[dst_len] && dst_len < dstsize)
+		dst_len++;
+	if (dst_len >= dstsize)
+		return (src_len + dst_len);
+	n = 0;
+	while (src[n] && dst_len + n < dstsize - 1)
 	{
-		dst[dst_len + n - 1] = src[n - 1];
+		dst[dst_len + n] = src[n];
 		n++;
 	}
-	dst[dst_len + n - 1] = '\0';
+	dst[dst_len + n] = '\0';
 	return (dst_len + src_len);
 }

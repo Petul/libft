@@ -6,10 +6,10 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 11:52:59 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/17 12:26:23 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:42:25 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h" 
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (c == t[i])
+		if ((unsigned char)c == t[i])
 			return ((void *)(t + i));
 		i++;
 	}

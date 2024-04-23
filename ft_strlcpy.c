@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 10:45:32 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/18 12:37:31 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/23 10:48:44 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	n;
 
 	src_len = ft_strlen(src);
+	if (dstsize == 0)
+		return (src_len);
 	n = 1;
 	while (src[n - 1] && n < dstsize)
 	{
