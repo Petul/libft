@@ -6,10 +6,11 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:45:50 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/22 15:31:30 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:05:04 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
 
 static int	count_splits(char const *s, char c)
 {
@@ -33,14 +34,24 @@ static int	count_splits(char const *s, char c)
 	return (count);
 }
 
-static void	do_splitting(char **splits, char *trimmed, char c, int n_splits)
+static void	free_array(char **splits)
+{
+	int	i;
+
+	i = 0;
+	while (splits[i])
+	{
+		free(splits[i]);
+		i++;
+	}
+}
+
+static int	do_splitting(char **splits, char *trimmed, char c, int n_splits)
 {
 	int	start;
 	int	end;
-	int	len;
 	int	i;
 
-	len = (int)ft_strlen(trimmed);
 	end = 0;
 	i = 0;
 	start = end;
@@ -49,13 +60,19 @@ static void	do_splitting(char **splits, char *trimmed, char c, int n_splits)
 		if (trimmed[end] == c || (trimmed[end] == 0))
 		{
 			splits[i] = ft_substr(trimmed, start, end - start);
+			if (splits[i] == NULL)
+			{
+				free_array(splits);
+				return (0);
+			}
 			i++;
-			while (trimmed[end] == c)
+			while (end < (int)ft_strlen(trimmed) && trimmed[end] == c)
 				end++;
 			start = end;
 		}
 		end++;
 	}
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -68,11 +85,20 @@ char	**ft_split(char const *s, char c)
 	set[0] = c;
 	set[1] = 0;
 	trimmed = ft_strtrim(s, set);
+	if (!trimmed)
+		return (NULL);
 	n_splits = count_splits(trimmed, c);
 	splits = ft_calloc(n_splits + 1, sizeof(char *));
 	if (!splits)
+	{
+		free(trimmed);
 		return (NULL);
-	do_splitting(splits, trimmed, c, n_splits);
+	}
+	if (!do_splitting(splits, trimmed, c, n_splits))
+	{
+		free(splits);
+		splits = NULL;
+	}
 	free(trimmed);
 	return (splits);
 }

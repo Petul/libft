@@ -6,12 +6,12 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 13:19:39 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/23 14:35:12 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/24 15:49:38 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-// Handle overflow
-int	ft_isspace(int c)
+
+static int	ft_isspace(int c)
 {
 	if (c == '\t' || c == '\n'
 		|| c == '\v' || c == '\f'
@@ -22,8 +22,8 @@ int	ft_isspace(int c)
 
 int	ft_atoi(const char *str)
 {
-	int	res;
-	int	sign;
+	long	res;
+	int		sign;
 
 	sign = 1;
 	while (ft_isspace(*str))
@@ -39,7 +39,11 @@ int	ft_atoi(const char *str)
 	while (*str && ft_isdigit(*str))
 	{
 		res = (res * 10) + sign * (*str - '0');
+		if (sign == 1 && res < 0)
+			return (-1);
+		else if (sign == -1 && res > 0)
+			return (0);
 		str++;
 	}
-	return (res);
+	return ((int)res);
 }

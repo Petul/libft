@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 09:07:53 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/17 12:28:16 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/24 09:47:41 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char		*d;
 	size_t				i;
 
+	if (!dst && !src)
+		return (NULL);
 	if (src > dst)
 		return (ft_memcpy(dst, src, len));
 	d = dst;

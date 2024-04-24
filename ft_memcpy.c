@@ -6,7 +6,7 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 08:25:39 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/17 12:27:22 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/24 09:41:10 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
@@ -20,6 +20,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	d = dst;
 	s = src;
 	i = 0;
+	if (!dst && !src)
+		return (dst);
 	while (i < n)
 	{
 		d[i] = s[i];

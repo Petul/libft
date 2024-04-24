@@ -6,7 +6,7 @@
 #    By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 09:43:07 by pleander          #+#    #+#              #
-#    Updated: 2024/04/22 17:58:41 by pleander         ###   ########.fr        #
+#    Updated: 2024/04/24 15:58:15 by pleander         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,15 @@ CFILES := ft_atoi.c \
 	ft_toupper.c 
 
 OBJECTS := $(CFILES:.c=.o)
+
+BONUS_CFILES := ft_lstnew_bonus.c \
+	ft_lstadd_front_bonus.c \
+	ft_lstsize_bonus.c \
+	ft_lstlast_bonus.c \
+	ft_lstadd_back_bonus.c
+
+BONUS_OBJECTS := $(BONUS_CFILES:.c=.o)
+
 INCLUDE := libft.h
 
 .PHONY: all
@@ -63,6 +72,7 @@ $(NAME): $(OBJECTS)
 .PHONY: clean
 clean:
 	rm -f $(OBJECTS)
+	rm -f $(BONUS_OBJECTS)
 
 .PHONY: fclean
 fclean: clean
@@ -70,3 +80,10 @@ fclean: clean
 
 .PHONY: re
 re: fclean all
+
+.PHONY: bonus
+bonus: .bonus
+
+.bonus: $(BONUS_OBJECTS)
+	ar rcs $(NAME) $(BONUS_OBJECTS)
+	touch .bonus
