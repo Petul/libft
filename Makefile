@@ -6,7 +6,7 @@
 #    By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 09:43:07 by pleander          #+#    #+#              #
-#    Updated: 2024/04/25 11:33:23 by pleander         ###   ########.fr        #
+#    Updated: 2024/04/25 14:27:01 by pleander         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ $(NAME): $(OBJECTS)
 clean:
 	rm -f $(OBJECTS)
 	rm -f $(BONUS_OBJECTS)
+	rm -f .bonus
 
 .PHONY: fclean
 fclean: clean
