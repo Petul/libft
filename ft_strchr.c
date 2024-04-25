@@ -6,17 +6,19 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:24:27 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/19 10:26:54 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/25 14:29:20 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
+	size_t	len;
 
+	len = ft_strlen(s);
 	i = 0;
-	while (i <= (int)ft_strlen(s))
+	while (i <= len)
 	{
 		if (s[i] == (char)c)
 			return ((char *)(s + i));
