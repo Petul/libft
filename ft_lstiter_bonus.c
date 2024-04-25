@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 16:40:54 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/25 13:36:30 by pleander         ###   ########.fr       */
+/*   Created: 2024/04/25 09:15:44 by pleander          #+#    #+#             */
+/*   Updated: 2024/04/25 09:42:06 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h> 
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	write(fd, &c, 1);
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

@@ -6,9 +6,10 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:04:13 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/23 15:44:37 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:50:41 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)

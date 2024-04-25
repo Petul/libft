@@ -6,10 +6,9 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 16:27:49 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/22 16:37:56 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:39:06 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {

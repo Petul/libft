@@ -6,10 +6,9 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 15:50:43 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/16 15:52:50 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:27:58 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)

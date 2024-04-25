@@ -1,17 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 16:40:54 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/25 13:36:30 by pleander         ###   ########.fr       */
+/*   Created: 2024/04/25 08:49:03 by pleander          #+#    #+#             */
+/*   Updated: 2024/04/25 09:08:42 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h> 
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	write(fd, &c, 1);
+	t_list	*current;
+	t_list	*next;
+
+	current = *lst;
+	while (current)
+	{
+		next = current->next;
+		ft_lstdelone(current, del);
+		current = next;
+	}
+	*lst = NULL;
 }

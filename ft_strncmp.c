@@ -6,10 +6,10 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 09:11:42 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/23 12:57:57 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:47:18 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include <stddef.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

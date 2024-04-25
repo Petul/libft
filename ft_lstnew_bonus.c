@@ -6,9 +6,10 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 13:42:07 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/24 14:09:08 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:51:12 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)

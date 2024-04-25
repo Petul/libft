@@ -6,11 +6,11 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:45:50 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/24 11:05:04 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:50:07 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
 
 static int	count_splits(char const *s, char c)
 {

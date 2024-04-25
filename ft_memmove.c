@@ -6,9 +6,10 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 09:07:53 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/24 09:47:41 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:35:28 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)

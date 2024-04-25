@@ -6,9 +6,10 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 12:39:51 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/23 11:26:18 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:40:27 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)

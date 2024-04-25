@@ -6,10 +6,10 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 15:12:52 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/16 15:45:09 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:36:01 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include <stddef.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {

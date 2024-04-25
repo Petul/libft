@@ -6,10 +6,10 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 14:35:12 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/16 15:45:44 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:50:30 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include <stddef.h>
 
 size_t	ft_strlen(const char *s)
 {

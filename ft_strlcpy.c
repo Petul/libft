@@ -6,10 +6,10 @@
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 10:45:32 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/23 10:48:44 by pleander         ###   ########.fr       */
+/*   Updated: 2024/04/25 13:41:43 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include <stddef.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
