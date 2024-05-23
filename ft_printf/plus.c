@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   plus.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 14:40:12 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/18 15:32:59 by pleander         ###   ########.fr       */
+/*   Created: 2024/05/14 13:58:17 by pleander          #+#    #+#             */
+/*   Updated: 2024/05/23 11:43:16 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdlib.h>
-#include "include/libft.h"
+#include "../include/libft.h"
+#include "../include/ft_printf.h"
 
-char	*ft_strdup(const char *s1)
+char	*apply_plus(t_fspec *s, char *num)
 {
-	int		size;
-	char	*copy;
+	char	*new_num;
 
-	size = ft_strlen(s1) + 1;
-	copy = malloc(sizeof(char) * size);
-	if (!copy)
+	if ((!s->plus_before_pos) || ft_strchr(num, '-'))
+		return (num);
+	new_num = ft_strjoin("+", num);
+	free(num);
+	if (!new_num)
 		return (NULL);
-	ft_strlcpy(copy, s1, size);
-	return (copy);
+	return (new_num);
 }

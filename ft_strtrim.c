@@ -9,7 +9,7 @@
 /*   Updated: 2024/04/24 09:12:08 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "include/libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

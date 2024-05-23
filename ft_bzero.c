@@ -9,7 +9,7 @@
 /*   Updated: 2024/04/25 13:27:58 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "include/libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

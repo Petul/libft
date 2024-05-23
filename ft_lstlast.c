@@ -9,7 +9,7 @@
 /*   Updated: 2024/04/24 15:47:12 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "include/libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {

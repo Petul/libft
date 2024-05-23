@@ -9,7 +9,7 @@
 /*   Updated: 2024/04/22 17:20:42 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "include/libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

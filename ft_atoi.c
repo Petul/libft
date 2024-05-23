@@ -9,7 +9,7 @@
 /*   Updated: 2024/04/24 15:49:38 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "include/libft.h"
 
 static int	ft_isspace(int c)
 {

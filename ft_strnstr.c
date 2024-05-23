@@ -9,7 +9,7 @@
 /*   Updated: 2024/04/25 14:30:25 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "include/libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

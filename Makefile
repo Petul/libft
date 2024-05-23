@@ -59,21 +59,45 @@ CFILES := ft_atoi.c \
 
 OBJECTS := $(CFILES:.c=.o)
 
-INCLUDE := libft.h
+PRINTF := ft_printf/libft_printf.o
+PRINTF_CFILES := ft_printf/ft_printf.c \
+	ft_printf/ft_utoa_base.c \
+	ft_printf/conversions.c \
+	ft_printf/conversions2.c \
+	ft_printf/parse_conversion.c \
+	ft_printf/precision.c \
+	ft_printf/printers.c \
+	ft_printf/utils.c \
+	ft_printf/plus.c \
+	ft_printf/poundsign.c \
+	ft_printf/field_width.c \
+	ft_printf/space.c
+PRINTF_OBJECTS := $(PRINTF_CFILES:.c=.o)
+
+GNL := get_next_line/libft_get_next_line.o
+GNL_CFILES:= get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
+GNL_OBJECTS := $(GNL_CFILES:.c=.o)
+
+INCLUDE := include
 
 .PHONY: all
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	ar rcs $(NAME) $(OBJECTS)
+$(NAME): $(OBJECTS) $(PRINTF) $(GNL)
+	ar rcs $(NAME) $?
+
+$(PRINTF): $(PRINTF_OBJECTS)
+	ld -r $(PRINTF_OBJECTS) -o $(PRINTF)
+
+$(GNL): $(GNL_OBJECTS)
+	ld -r $(GNL_OBJECTS) -o $(GNL)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDE) 
 
 .PHONY: clean
 clean:
-	rm -f $(OBJECTS)
-	rm -f $(BONUS_OBJECTS)
+	rm -f $(OBJECTS) $(PRINTF_OBJECTS) $(PRINTF) $(GNL_OBJECTS) $(GNL)
 
 .PHONY: fclean
 fclean: clean

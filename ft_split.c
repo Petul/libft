@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
-#include "libft.h"
+#include "include/libft.h"
 
 static int	count_splits(char const *s, char c)
 {

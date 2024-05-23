@@ -9,7 +9,7 @@
 /*   Updated: 2024/04/25 13:30:50 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "include/libft.h"
 
 static void	convert(int n, char *str, int sign)
 {

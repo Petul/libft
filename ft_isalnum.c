@@ -9,7 +9,7 @@
 /*   Updated: 2024/04/16 09:33:33 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "include/libft.h"
 
 int	ft_isalnum(int c)
 {

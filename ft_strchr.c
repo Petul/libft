@@ -9,7 +9,7 @@
 /*   Updated: 2024/04/25 14:29:20 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "include/libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

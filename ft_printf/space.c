@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   space.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 14:40:12 by pleander          #+#    #+#             */
-/*   Updated: 2024/04/18 15:32:59 by pleander         ###   ########.fr       */
+/*   Created: 2024/05/15 15:15:27 by pleander          #+#    #+#             */
+/*   Updated: 2024/05/23 11:42:04 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdlib.h>
-#include "include/libft.h"
+#include "../include/ft_printf.h"
+#include "../include/libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*apply_space_before_pos(t_fspec *s, char *num)
 {
-	int		size;
-	char	*copy;
+	char	*padded_num;
 
-	size = ft_strlen(s1) + 1;
-	copy = malloc(sizeof(char) * size);
-	if (!copy)
+	if (!s->space_before_pos || s->plus_before_pos)
+		return (num);
+	if (ft_strchr(num, '-'))
+		return (num);
+	padded_num = ft_strjoin(" ", num);
+	free(num);
+	if (!padded_num)
 		return (NULL);
-	ft_strlcpy(copy, s1, size);
-	return (copy);
+	return (padded_num);
 }
