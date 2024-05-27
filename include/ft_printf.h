@@ -14,6 +14,7 @@
 # define FT_PRINTF_BONUS_H
 
 # include <stddef.h>
+# include <stdarg.h>
 
 # define STDOUT 1
 # define BASE_DEC "0123456789"
@@ -39,17 +40,26 @@ typedef struct s_fspec
 	size_t	precision;
 }	t_fspec;
 
+typedef struct s_result
+{
+	char *buffer;
+	size_t buf_size;
+	size_t written;
+}	t_result;
+
 int		ft_printf(const char *fstring, ...);
-t_bool	print_char(int data, size_t *written);
-t_bool	print_string(char *data, size_t n, size_t *written);
+int		ft_snprintf(char *output, size_t size, const char *fstring, ...);
+int		ft_vsnprintf(char *output, size_t size, const char *fstring, va_list args); 
+void	print_char(int data, t_result *r);
+void	print_string(char *data, size_t n, t_result *r);
 t_fspec	*parse_conversion(char *conversion);
-t_bool	convert_char(t_fspec *s, int data, size_t *written);
-t_bool	convert_string(t_fspec *s, char *data, size_t *written);
-t_bool	convert_pointer(t_fspec *s, char *data, size_t *written);
-t_bool	convert_decimal(t_fspec *s, int data, size_t *written);
-t_bool	convert_unsigned(t_fspec *s, unsigned int data, size_t *written);
-t_bool	convert_hex_upper(t_fspec *s, int data, size_t *written);
-t_bool	convert_hex_lower(t_fspec *s, int data, size_t *written);
+t_bool	convert_char(t_fspec *s, int data, t_result *r);
+t_bool	convert_string(t_fspec *s, char *data, t_result *r);
+t_bool	convert_pointer(t_fspec *s, char *data, t_result *r);
+t_bool	convert_decimal(t_fspec *s, int data, t_result *r);
+t_bool	convert_unsigned(t_fspec *s, unsigned int data, t_result *r);
+t_bool	convert_hex_upper(t_fspec *s, int data, t_result *r);
+t_bool	convert_hex_lower(t_fspec *s, int data, t_result *r);
 char	*ft_utoa_base(unsigned int n, char *base);
 char	*ft_ultoa_base(unsigned long n, char *base);
 char	*apply_plus(t_fspec *s, char *num);
