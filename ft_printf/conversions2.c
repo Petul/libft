@@ -14,13 +14,6 @@
 #include "../include/libft.h"
 #include "../include/ft_printf.h"
 
-// static int	free_and_return_false(char *num)
-// {
-// 	if (num != NULL)
-// 		free(num);
-// 	return (FALSE);
-// }
-
 t_bool	convert_unsigned(t_fspec *s, unsigned int data, t_result *r)
 {
 	char	*num;
@@ -34,7 +27,7 @@ t_bool	convert_unsigned(t_fspec *s, unsigned int data, t_result *r)
 	num = apply_field_width(s, num);
 	if (!num)
 		return (FALSE);
-	print_string(num, ft_strlen(num), r);
+	write_string(num, ft_strlen(num), r);
 	free(num);
 	return (TRUE);
 }
@@ -75,7 +68,7 @@ t_bool	convert_hex_upper(t_fspec *s, int data, t_result *r)
 		if (!num)
 			return (FALSE);
 	}
-	print_string(num, ft_strlen(num), r);
+	write_string(num, ft_strlen(num), r);
 	free(num);
 	return (TRUE);
 }
@@ -93,7 +86,7 @@ t_bool	convert_hex_lower(t_fspec *s, int data, t_result *r)
 		if (!num)
 			return (FALSE);
 	}
-	print_string(num, ft_strlen(num), r);
+	write_string(num, ft_strlen(num), r);
 	free(num);
 	return (TRUE);
 }

@@ -37,10 +37,10 @@ t_bool	convert_char(t_fspec *s, int data, t_result *r)
 	if (!str)
 		return (FALSE);
 	if (data == 0 && s->negative_field_width)
-		print_char(data, r);
-	print_string(str, ft_strlen(str), r);
+		write_char(data, r);
+	write_string(str, ft_strlen(str), r);
 	if (data == 0 && !s->negative_field_width)
-		print_char(data, r);
+		write_char(data, r);
 	return (TRUE);
 	free(str);
 }
@@ -61,7 +61,7 @@ t_bool	convert_string(t_fspec *s, char *data, t_result *r)
 	str = apply_field_width(s, str);
 	if (!str)
 		return (free_and_return_false(str));
-	print_string(str, ft_strlen(str) + 1, r);
+	write_string(str, ft_strlen(str) + 1, r);
 	free(str);
 	return (TRUE);
 }
@@ -80,7 +80,7 @@ t_bool	convert_pointer(t_fspec *s, char *data, t_result *r)
 	num = apply_field_width(s, num);
 	if (!num)
 		return (FALSE);
-	print_string(num, ft_strlen(num), r);
+	write_string(num, ft_strlen(num), r);
 	free(num);
 	return (TRUE);
 }
@@ -104,7 +104,7 @@ t_bool	convert_decimal(t_fspec *s, int data, t_result *r)
 	num = apply_field_width(s, num);
 	if (!num)
 		return (FALSE);
-	print_string(num, ft_strlen(num), r);
+	write_string(num, ft_strlen(num), r);
 	free(num);
 	return (TRUE);
 }

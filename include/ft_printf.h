@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_bonus.h                                  :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 16:08:41 by pleander          #+#    #+#             */
-/*   Updated: 2024/05/18 18:18:44 by pleander         ###   ########.fr       */
+/*   Updated: 2024/05/28 09:27:44 by pleander         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_BONUS_H
-# define FT_PRINTF_BONUS_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stddef.h>
 # include <stdarg.h>
@@ -42,16 +42,18 @@ typedef struct s_fspec
 
 typedef struct s_result
 {
-	char *buffer;
-	size_t buf_size;
-	size_t written;
-}	t_result;
+	char	*buffer;
+	size_t	buf_size;
+	size_t	written;
+}			t_result;
 
 int		ft_printf(const char *fstring, ...);
-int		ft_snprintf(char *output, size_t size, const char *fstring, ...);
-int		ft_vsnprintf(char *output, size_t size, const char *fstring, va_list args); 
-void	print_char(int data, t_result *r);
-void	print_string(char *data, size_t n, t_result *r);
+int		ft_snprintf(char *output, size_t size, const char *fstr, ...);
+int		ft_vsnprintf(char *output, size_t size, const char *fstr, va_list args);
+void	write_char(int data, t_result *r);
+void	write_string(char *data, size_t n, t_result *r);
+t_bool	print_char(int data);
+t_bool	print_string(char *data, size_t n);
 t_fspec	*parse_conversion(char *conversion);
 t_bool	convert_char(t_fspec *s, int data, t_result *r);
 t_bool	convert_string(t_fspec *s, char *data, t_result *r);
@@ -71,5 +73,7 @@ char	*apply_string_precision(t_fspec *s, char *str);
 int		only_zero_or_space(char *num);
 void	float_sign(char *num);
 void	float_space(char *num);
+void	init_t_result(char *output, size_t buf_size, t_result *res);
+t_bool	process_fspec(char *f, va_list *args, size_t *loc, t_result *r);
 
 #endif

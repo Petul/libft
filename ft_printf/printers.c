@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "../include/ft_printf.h"
 
-void	print_char(int data, t_result *r)
+void	write_char(int data, t_result *r)
 {
 	if (r->buf_size > r->written)
 	{
@@ -23,14 +23,35 @@ void	print_char(int data, t_result *r)
 	r->written++;
 }
 
-void	print_string(char *data, size_t n, t_result *r)
+void	write_string(char *data, size_t n, t_result *r)
 {
 	size_t	i;
 
 	i = 0;
 	while (data[i] && i < n)
 	{
-		print_char(data[i], r);
+		write_char(data[i], r);
 		i++;
 	}
+}
+
+t_bool	print_char(int data)
+{
+	if (write(STDOUT, &data, 1) < 0)
+		return (FALSE);
+	return (TRUE);
+}
+
+t_bool	print_string(char *data, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (data[i] && i < n)
+	{
+		if (print_char(data[i]) == FALSE)
+			return (FALSE);
+		i++;
+	}
+	return (TRUE);
 }
