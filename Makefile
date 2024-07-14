@@ -6,7 +6,7 @@
 #    By: pleander <pleander@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 09:43:07 by pleander          #+#    #+#              #
-#    Updated: 2024/07/11 16:42:30 by pleander         ###   ########.fr        #
+#    Updated: 2024/07/14 11:02:53 by pleander         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,12 +82,19 @@ GNL := get_next_line/libft_get_next_line.o
 GNL_CFILES:= get_next_line/get_next_line.c
 GNL_OBJECTS := $(GNL_CFILES:.c=.o)
 
+MEMLIST_CFILES := memlist/memlist_add.c \
+	memlist/memlist.c \
+	memlist/release.c \
+	memlist/reserve.c
+
+MEMLIST_OBJECTS := $(MEMLIST_CFILES:.c=.o)
+
 INCLUDE := include
 
 .PHONY: all
 all: $(NAME)
 
-$(NAME): $(OBJECTS) $(PRINTF) $(GNL)
+$(NAME): $(OBJECTS) $(PRINTF) $(GNL) $(MEMLIST_OBJECTS)
 	ar rcs $(NAME) $?
 
 $(PRINTF): $(PRINTF_OBJECTS)
