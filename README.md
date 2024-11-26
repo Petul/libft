@@ -28,13 +28,18 @@ make
 This command generates the libft.a static library, which can be linked to other projects.
 
 ## Usage
-Include the `libft.h` header in your project:
+Include the `libft.h`, `ft_printf.h`, `get_next_line.h` or `memlist.h` header in your project:
 ```C
 #include "libft.h"
+#include "ft_printf.h"
+#include "get_next_line.h"
+#include "memlist.h"
+
 ```
 Link the compiled library during the compilation of your project:
 ```bash
-gcc -L path/to/libft.a -lft your_program.c -o your_program
+gcc your_program.c path/to/libft.a -o your_program -I path/to/libft/include
 ```
+
 ## Acknowledgements
 This project is part of the Hive Helsinki curriculum, inspired by the 42 Network's emphasis on peer-to-peer learning and hands-on projects.
