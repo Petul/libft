@@ -111,7 +111,7 @@ $(GNL): $(GNL_OBJECTS)
 
 .PHONY: clean
 clean:
-	rm -f $(OBJECTS) $(PRINTF_OBJECTS) $(PRINTF) $(GNL_OBJECTS) $(GNL)
+	rm -f $(OBJECTS) $(PRINTF_OBJECTS) $(PRINTF) $(GNL_OBJECTS) $(GNL) $(MEMLIST_OBJECTS)
 
 .PHONY: fclean
 fclean: clean
