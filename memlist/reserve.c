@@ -33,7 +33,10 @@ void	*reserve(size_t bytes)
 		return (NULL);
 	n = ft_lstnew(mem);
 	if (!n)
+	{
+		free(mem);
 		return (NULL);
+	}
 	ft_lstadd_front(memlist, n);
 	return (mem);
 }
@@ -59,7 +62,10 @@ void	*creserve(size_t n, size_t size)
 		return (NULL);
 	newlist = ft_lstnew(mem);
 	if (!n)
+	{
+		free(mem);
 		return (NULL);
+	}
 	ft_lstadd_front(memlist, newlist);
 	return (mem);
 }

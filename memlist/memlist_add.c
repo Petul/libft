@@ -18,16 +18,17 @@
  *
  * @param mem Pointer to manually allocated memory segment
  */
-void	memlist_add(void *mem)
+void	*memlist_add(void *mem)
 {
 	t_list	**memlist;
 	t_list	*n;
 
 	memlist = get_memlist();
 	if (!memlist)
-		return ;
+		return (NULL);
 	n = ft_lstnew(mem);
 	if (!n)
-		return ;
+		return (NULL);
 	ft_lstadd_front(memlist, n);
+	return (mem);
 }

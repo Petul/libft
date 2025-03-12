@@ -19,7 +19,7 @@ t_list	**get_memlist(void);
 void	memlist_release_all(void);
 void	*reserve(size_t bytes);
 void	*creserve(size_t n, size_t size);
-void	memlist_add(void *mem);
+void	*memlist_add(void *mem);
 void	release(void *mem);
 
 #endif
